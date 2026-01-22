@@ -59,3 +59,13 @@ test('Find Room Booking Page', async ({ page }) => {
 
 
 });
+
+test('expolor section test', async ({ page }) => {
+
+  await page.goto('https://hotel.salonpro.info/');
+
+  await page.getByRole('link', { name: 'Explore' }).click();
+
+  await expect(page.getByRole('heading', { name: 'About Us' })).toBeVisible();
+
+})
