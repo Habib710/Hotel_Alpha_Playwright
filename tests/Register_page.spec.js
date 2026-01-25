@@ -12,7 +12,7 @@ test('Resiter Page', async ({ page }) => {
     ).toBeVisible();
 
     await page.locator("//input[@placeholder='Full Name']").fill("Habib2");
-    await page.locator("//input[@placeholder='Email Address']").fill("habib2@gmail.com");
+    await page.locator("//input[@placeholder='Email Address']").fill("habib22@gmail.com");
 
     await page.locator("//input[@placeholder='01xxxxxxxxx']").fill("01571033601");
 
@@ -21,6 +21,8 @@ test('Resiter Page', async ({ page }) => {
     await page.locator("//input[@placeholder='OTP']").fill("01571033601");
     await page.locator("//button[normalize-space()='Verify']").click();
 
+
+    await expect(page.getByRole('heading', { name: /Bookings/i })).toBeVisible();
 
 
 
