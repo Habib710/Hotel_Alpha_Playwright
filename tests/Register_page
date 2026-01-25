@@ -6,5 +6,10 @@ test('Resiter Page', async ({ page }) => {
 
     await page.locator("//a[normalize-space()='Register']").click();
 
-    // await expect(page).toHaveTitle(/Playwright/);
+
+    await expect(
+        page.getByRole('heading', { name: 'Create an account' })
+    ).toBeVisible();
+
+
 });
