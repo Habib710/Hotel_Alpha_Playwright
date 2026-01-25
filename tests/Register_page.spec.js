@@ -18,6 +18,9 @@ test('Resiter Page', async ({ page }) => {
 
     await page.locator("//button[normalize-space()='Register']").click();
 
+    await page.locator("//input[@placeholder='OTP']").fill("01571033601");
+    await page.locator("//button[normalize-space()='Verify']").click();
+
 
 
 
