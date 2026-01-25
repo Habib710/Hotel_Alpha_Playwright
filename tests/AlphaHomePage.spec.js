@@ -35,28 +35,20 @@ test('Find Room Booking Page', async ({ page }) => {
   await page.locator("button:has-text('26')").click();
 
 
-
   await page.locator("//input[@placeholder='Adults']").fill("2");
   await page.locator("//input[@placeholder='Adults']").press("Tab");
-
   await page.locator("//input[@placeholder='Children']").fill("1");
   await page.locator("//input[@placeholder='Children']").press("Tab");
-
   await page.getByRole('button', { name: 'Search' }).click();
 
 
   await page.waitForLoadState("networkidle");
-
-
   const allCard = page.locator("#level_sum_all");
   await expect(allCard).toBeVisible();
 
 
   const rawText = (await allCard.innerText()).trim();
   console.log("All Card Raw Text:", rawText);
-
-
-
 
 });
 
@@ -67,9 +59,6 @@ test('expolor section test', async ({ page }) => {
   const explore = page.locator('text=Explore More').first();
   await explore.scrollIntoViewIfNeeded();
   await explore.click();
-
-
-
 
   await expect(
     page.getByRole('heading', { name: 'About Us', level: 1 }).first()
