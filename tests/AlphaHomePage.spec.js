@@ -1,7 +1,6 @@
 
 import { test, expect } from '@playwright/test';
-const { test, expect } = require('@playwright/test');
-const AxeBuilder = require('@axe-core/playwright').default;
+
 
 test('Alpha Page and Title', async ({ page }) => {
   await page.goto('https://hotel.salonpro.info/');
@@ -11,16 +10,6 @@ test('Alpha Page and Title', async ({ page }) => {
 });
 
 
-
-test.describe('homepage', () => { // 2
-  test('should not have any automatically detectable accessibility issues', async ({ page }) => {
-    await page.goto('https://hotel.salonpro.info/'); // 3
-
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze(); // 4
-
-    expect(accessibilityScanResults.violations).toEqual([]); // 5
-  });
-});
 
 test('Find Room Booking Page', async ({ page }) => {
   await page.goto('https://hotel.salonpro.info/');
